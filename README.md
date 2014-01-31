@@ -25,3 +25,11 @@ The promotion's client-side code structure utilizes RactiveJS for data binding w
 ##### Folders: `php/application`
 This folder contains the code written to setup a loose MVC-inspired data backend to support our input-driven front-end promotions.  I, personally, am responsible for an estimated 35-45% of all of this code that was built using Paris ORM as a base [https://github.com/j4mie/paris].  The custom-written controllers were authored by Matthew Douglas [matthewdouglas@gmail.com], a coworker (and reference) of mine at PERQ.
 Both this promotion and the Instant Win promotion type utilize many of the same data "endpoints".
+
+## FATWIN.com - HTML and Mustache Templates
+##### Folders: `tpl/`
+This folder contains all of the front-end templates written using Twitter Bootstrap versions 2.3 and 3.0 in conjunction with the Mustache templating engine.
+
+## FATWIN.com - CSS
+##### Folers: `css/`
+This folder contains all of the custom CSS files used throughout the various FATWIN promotion types.
