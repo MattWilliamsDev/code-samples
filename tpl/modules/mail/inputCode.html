@@ -1,0 +1,58 @@
+<div class="row">
+    <div class="col-xs-offset-1 col-sm-offset-1 col-md-offset-1 col-xs-10 col-sm-10 col-md-10">
+        <!-- <div class="row form"> -->
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <div class="page-title">
+                    <h2>
+                        <strong>Know If You've Won?</strong><br>
+                        <small>Enter the prize code from your mail piece to get started!</small>
+                    </h2>
+                </div>
+            </div>
+        
+            <!-- <div class="col-md-4 text"> -->
+            <div class="col-xs-12 col-sm-6 col-md-6">
+                <form action="#" id="inputCode-form" name="inputCode-form" data-voptions="inputCode" method="post">
+                    <fieldset>
+                        <div class="row form-group">
+                            <div class="col-md-12">
+                                <div class="row form-row">
+
+                                    <!-- <div class="col-md-12"> -->
+                                        <div id="codepop" rel="popover" class="pull-right">
+                                            where's my code?
+                                        </div>
+                                    <!-- </div> -->
+
+                                    <div class="col-md-12">
+                                        <label for="inputCode" class="sr-only">Redemption Code</label>
+                                        <!-- <input class="form-control" type="text" name="inputCode" id="inputCode" on-tap="clear" value="{{ code }}"> -->
+                                        <input class="form-control pull-right" type="text" name="inputCode" id="inputCode" value="{{ code }}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="clearfix"></div>
+
+                    <div class="row form-group">
+                        <div class="col-sm-offset-6 col-md-offset-6 col-xs-12 col-sm-6 col-md-6 form-actions">
+                            <div class="row form-row">
+                                <div class="col-md-12 pull-right">
+                                    <button class="btn btn-primary pull-right btn-block btn-nav" type="submit" placeholder="Enter your 11-digit code here" href="verifyCode">
+                                        submit code
+                                    </button>
+                                    <!-- <div class="btn bton" on-tap="submit" role="button" placeholder="Enter your 11-digit code here">submit code</div>   -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>  <!-- span -->   
+        </div> <!-- row -->
+
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <h2>This is the template.</h2>
+        <div>
+            {{ fname }}
+            <br>
+            {{ lname }}
+        </div>
+
+        {{# client.usesCode }}
+        <form action="" name="code-form" id="code-form">
+            <input type="text" id="code" name="code" value="{{ code }}">
+        </form>
+        {{/ client.usesCode }}
+        
+        <form action="" name="questions-form" id="questions-form">
+            <input type="text" id="fname" name="fname" value="{{ fname }}">
+            <input type="text" id="lname" name="lname" value="{{ lname }}">
+            
+            <button class="btn" type="button" on-tap="submit">Submit</button>
+        </form>
+    </div> <!-- container -->
+</div>

@@ -1,0 +1,29 @@
+
+<div class="winnersContainer">
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+
+            <div class="row">
+                <div class="region-separator col-md-12"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Local Prize Winners</h3>
+                    Etsy Vice mlkshk, polaroid blog occupy et aute readmade cillum art party selvage.
+                </div>
+            </div>
+
+            <div class="row">
+                {{# winners }}        
+                <div class="col-xs-12 col-sm-6 col-md-4 winner">
+                    <div class="pic"><img src="{{ image }}" class="img-circle"> </div>
+                    <div class="name">{{ first }} {{ last }}</div>
+                    <div class="prize"> {{ prize }} </div>
+                    <div class="city"> {{ city }}, {{ state }} </div>
+                </div>
+                {{/ winners }}
+            </div>
+
+        </div>
+    </div>
+</div>

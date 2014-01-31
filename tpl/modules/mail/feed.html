@@ -1,0 +1,106 @@
+<div id="jackpot-accordion" class="row panel-group">
+    <div class="panel panel-default">
+
+        <!-- Place this above the .panel-heading div so that it pushes the .panel-heading div down -->
+        <div id="jackpot-info" class="panel-collapse collapse">
+            <div class="panel-body">
+
+                <div class="row">
+                    {{# jackpot }}
+                    <div class="col-xs-12 col-sm-5 col-md-5">
+                        <h2 class="jackpot-title">{{ heading }}</h2>
+                        <p class="jackpot-desc">
+                            {{ description }}
+                        </p>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-7 col-md-7">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 class="center muted">Last Month's Winners</h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            {{# winners : i }}
+                            <div class="col-xs-12 col-sm-4 col-md-4 winner jackpot" id="jackpotWinner{{ i }}">
+                                <div class="pic">
+                                    <img src="{{ image }}" title="{{ prize }} Winner" class="img-circle">
+                                </div>
+                                <div class="name">
+                                    {{ first }} {{ last }}
+                                </div>
+
+                                {{# prize }}
+                                <div class="prize">
+                                    {{ prize }}
+                                </div>
+                                {{/ prize }}
+                                
+                                <div class="city">
+                                    {{ city }}, {{ format(state) }}
+                                </div>
+                            </div>
+                            {{/ winners }}
+                        </div>
+                    </div>
+                    {{/ jackpot }}
+                </div> <!-- /.row -->
+
+            </div><!-- /.panel-body -->
+        </div> <!-- /#jackpot-info -->
+
+        <div class="panel-heading">
+            <div class="livewinner col-xs-12 col-sm-6 col-md-6">
+                <span class="highlight">&bull; LIVE WINNERS NEAR YOU</span>&nbsp;
+                <span id="currentWinner">&nbsp;
+                    {{# entrants }}
+                        {{# displayed }}
+                            {{ format(fname) }} {{ format(lname) }} OF {{ format(city) }}, {{ format(state) }} <strong>{{ format(type) }}</strong> @ {{ formatTime(time) }}
+                        {{/ displayed }}
+                    {{/ entrants }}
+                </span>
+
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="stats col-xs-12 col-sm-6 col-md-6">
+                <div class="row">
+                    <div class="col-xs-2 col-sm-2 col-md-2">
+                        <span class="highlight">
+                            CONTESTS
+                        </span><br>
+                        {{ stats.contests }}
+                    </div>
+
+                    <div class="col-xs-3 col-sm-2 col-md-2">
+                        <span class="highlight">
+                            PARTICIPANTS
+                        </span><br>
+                        {{ stats.participants }}
+                    </div>
+                    
+                    <div class="col-xs-3 col-sm-4 col-md-4">
+                        <span class="highlight">
+                            PROGRESSIVE JACKPOT
+                        </span><br>
+                        {{ stats.progressive }}
+                    </div>
+                    
+                    <div class="col-xs-2 col-sm-2 col-md-2">
+                        <span class="highlight">
+                            AWARDED
+                        </span><br>
+                        {{ stats.awarded }}
+                    </div>
+                    
+                    <div class="col-xs-2 col-sm-2 col-md-2 full-height">
+                        <a data-toggle="collapse" data-parent="#jackpot-accordion" href="#jackpot-info" class="link-full menu-icon"></a>
+                    </div>
+                </div>
+
+            </div> <!-- stats -->
+            <div class="clearfix"></div>
+        </div> <!-- /.panel-heading -->
+
+    </div>
+</div>

@@ -1,0 +1,99 @@
+<div id="{{ floorName }}-content" class="question">
+    {{# winner }}
+        {{# winnerFields }}
+        <div class="panel-head row">
+            <div class="col-md-12 header">
+                <h2 class="panel-title">
+                    {{{ header }}}
+                </h2>  
+            </div>
+            
+            {{# kiosk }}
+            <div class="col-md-12 subheader">
+                <div class="panel-subhead">
+                    {{{ kioskFields.subhead }}}
+                </div>
+            </div>
+
+            <div id="prize-info" class="col-md-12">
+                <img src="{{{ kioskFields.prize_image }}}" alt="" />
+                <div class="prizetext">
+                    <h3>{{ kioskFields.prize_head }}</h3>
+                    <p>
+                        {{{ kioskFields.prize_text }}}
+                    </p>
+                </div>
+            </div>
+            {{/ kiosk }}
+        </div>
+        
+        <div class="row">
+            {{^ kiosk }}
+            <div class="col-md-12 subheader">
+                <div class="panel-subhead">
+                    {{{ noKioskFields.subhead }}}
+                </div>
+            </div>
+
+            <div id="prize-info" class="col-md-12">
+                <img src="{{{ noKioskFields.prize_image }}}" alt="" />
+                <div class="prizetext">
+                    <h3>{{ noKioskFields.prize_head }}</h3>
+                    <p>
+                        {{{ noKioskFields.prize_text }}}
+                    </p>
+                </div>
+            </div>
+            {{/ kiosk }}   
+        </div>
+        {{/ winnerFields }}
+    {{/ winner }}
+
+    {{^ winner }}
+        {{# loserFields }}
+        <div id="no-win" class="panel-head row">
+            <h2 class="panel-title">
+                {{{ header }}}
+            </h2>
+            <div class="panel-subhead">
+                {{{ subhead }}}
+            </div>
+        </div>
+        <!-- <div class="col-md-12"></div> -->
+        {{/ loserFields }}
+    {{/ winner }} 
+
+    {{# voucher }}
+    <div id="prize-voucher" class="row">
+        <div class="col-md-12">
+            <div class="preview">
+                <h3>{{{ headline }}}</h3>
+                <p>{{{ description }}}</p>
+                <p class="legal"><small>{{{ legal }}}</small></p>
+            </div>
+        </div>
+    </div>
+    {{/ voucher }}
+
+    <div class="buttons"
+        data-qcontainer="0"
+        data-panel="{{ floorName }}"
+        data-pindex="{{ indexes.p }}"
+    >
+        <div class="row">
+            {{# nextPanel }}
+            <div class="col-md-6 col-md-push-6">
+                <button id="nextBtn{{ indexes.p }}" class="panelsLinkNext NxtBtn btn-block" type="button">{{ nextPanel }}</button>
+            </div>
+            {{/ nextPanel }}
+            
+            {{# prevPanel }}
+            <div class="col-md-6 col-md-pull-6">
+                <button id="backBtn{{ indexes.p }}" class="panelsLinkPrev BckBtn btn-block" type="button">{{ prevPanel }}</button>
+            </div>
+            {{/ prevPanel }}
+        </div>
+    </div>
+
+    <div id="redirector"></div>
+</div>

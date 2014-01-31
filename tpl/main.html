@@ -1,0 +1,175 @@
+<div id="panels">
+    {{#panels:i}}
+        <section class="panelsFloor" name="{{ floorName }}" id="{{ floorName }}" data-index="{{ i }}">
+            <div class="panel-content">
+                <div class="panel-head">
+                    <h2>
+                        {{{ header }}}<br>
+                        <small>{{{ subhead }}}</small>
+                    </h2>
+                </div>
+                    
+                <!-- Intro -->
+                {{#type === 'intro'}}
+                    <h3>Intro Panel</h3>
+                {{/type}}
+                <!-- /Intro -->
+        
+                <!-- Register -->            
+                {{#type === 'register'}}
+                    <div id="social-registration" class="registration">
+                        <h3>Social Registration</h3>
+                    <!-- {{#fields.socialRegister:index}} -->
+                    <!-- {{log(fields.socialRegister)}} -->
+                        {{#fields.socialRegister.fb}}
+                        <div>
+                            <a href="#" data-network="fb" on-tap="socialLogin">Facebook</a>
+                        </div>
+                        {{/fields.socialRegister.fb}}
+
+                        {{#fields.socialRegister.gplus}}
+                        <div>
+                            <a href="#" data-network="gplus" on-tap="socialLogin">Google+</a>
+                        </div>
+                        {{/fields.socialRegister.gplus}}
+
+                        {{#fields.socialRegister.twitter}}
+                        <div>
+                            <a href="#" data-network="twitter" on-tap="socialLogin">Twitter</a>
+                        </div>
+                        {{/fields.socialRegister.twitter}}
+
+                        {{#fields.socialRegister.fatwin}}
+                        <div>
+                            <a href="#" data-network="fatwin" on-tap="socialLogin">Fatwin</a>
+                        </div>
+                        {{/fields.socialRegister.fatwin}}
+                    <!-- {{/fields.socialRegister}} -->
+                    </div>
+                    
+                    <div id="manual-registration" class="registration">
+                        <h3>Manual Registration</h3>
+                        {{#fields.manualRegister:index}}
+                            {{#fields.manualRegister[index].shown}}
+                            <input type="{{ type }}" name="{{ name }}" id="{{ name }}" value="{{ value }}" class="{{valid === true ? 'valid' : 'invalid'}} {{ name == 'firstname' || name == 'lastname' ? 'col-xs-6 col-sm-6 col-md-6' : 'col-xs-12 col-sm-12 col-md-12' }}" placeholder="{{ label }}" data-index="{{ index }}" on-input="dataBind">
+                            {{/fields.manualRegister[index].shown}}
+                        {{/fields.manualRegister}}
+                    </div>
+                    <!-- {{#fields:property}}
+                        
+                        <p class="content-desc">{{{ label }}}</p>
+
+                        <p>Is this required?  {{ required }}</p>
+                        <p>Input Type: {{ type }}</p>
+                        
+                        <ul>
+                            {{#options.length}}
+                                {{#options:key}}
+                                <li>{{ key }}: {{ options[key].value }}</li>
+                                {{/options}}
+                            {{/options.length}}
+                            
+                            {{log(fields)}}
+                            {{#fields.length}}
+                                {{#fields:key}}
+                                <li>{{ key }}: {{ fields[key].value }}</li>
+                                {{/fields}}
+                            {{/fields.length}}
+                        </ul>
+
+                        <div class="validator-message">
+                            <p>Is valid?  {{ valid }}</p>
+                        </div>
+                        {{/.type}}
+
+
+                        {{#.type === 'manual'}}
+                        <p class="content-desc">{{{ label }}}</p>
+
+                        <p>Is this required?  {{ required }}</p>
+                        <p>Input Type: {{ type }}</p>
+                        
+                        <ul>
+                            {{#options.length}}
+                                {{#options:key}}
+                                <li>{{ key }}: {{ options[key].value }}</li>
+                                {{/options}}
+                            {{/options.length}}
+                            
+                            {{log(fields)}}
+                            {{#fields.length}}
+                                {{#fields:key}}
+                                <li>{{ key }}: {{ fields[key].value }}</li>
+                                {{/fields}}
+                            {{/fields.length}}
+                        </ul>
+                        {{/.type}}
+                    {{/fields}}  -->   
+                {{/type}}
+                <!-- /Register -->
+
+                <!-- Dropdown -->
+                {{#type === 'dropdown'}}
+                    <h3>Dropdown Panel</h3>
+                    {{#fields:i}}
+                        <select name="{{ name }}" id="{{ name }}">
+                            {{#options:index}}
+                            <option value="{{ value }}">{{ label }}</option>
+                            {{/options}}
+                        </select>
+                    {{/fields}}
+                {{/type}}
+                <!-- /Dropdown -->
+                
+                <!-- Input -->
+                {{#type === 'input'}}
+                    <h3>Input Type</h3>
+                    <ul>
+                    {{#fields:key}}
+                    {{log(key)}}
+                        <li>
+                            {{ label }}: <input type="{{ type }}" id="{{ name }}" name="{{ name }}" value="{{ value }}" placeholder="{{ placeholder }}">
+                        </li>
+                    {{/fields}}
+                    </ul>
+                {{/type}}
+                <!-- /Input -->
+
+                <!-- Modal -->
+                {{#type === 'modal'}}
+                    {{#fields:property}}
+                    {{/fields}}
+                <h3>Modal</h3>
+                {{/type}}
+                <!-- /Modal -->    
+
+                <!-- Modal -->
+                {{#type === 'info'}}
+                    {{#fields:property}}
+                    {{/fields}}
+                <h3>Info</h3>
+                {{/type}}
+                <!-- /Modal -->
+
+                <!-- Game -->
+                {{#type === 'game'}}
+                    {{#fields:property}}
+                    {{/fields}}
+                <h3>Game</h3>
+                {{/type}}
+                <!-- /Game -->
+
+                {{^prevPanel === true}}
+                <button id="backBtn{{ i }}" class="panelsLink panelsLink{{ i - 1 }} BckBtn btn" type="button">Back</button>
+                {{/prevPanel}}
+
+                {{^nextPanel === true}}
+                <button id="nextBtn{{ i }}" class="panelsLink panelsLink{{ i + 1 }} NxtBtn btn" type="button">Next</button>
+                {{/nextPanel}}
+            </div>
+        </section>
+    {{/panels}}
+</div>
+
+{{>missionControl}}
+{{>winnersFeed}}

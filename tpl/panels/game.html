@@ -1,0 +1,47 @@
+<div id="{{ floorName }}-content" class="question">
+    <div class="panel-head row">
+        <h2 class="panel-title">
+            {{{ header }}}
+        </h2>
+        <div class="panel-subhead">
+            {{{ subhead }}}
+        </div>
+    </div>
+    
+    <div class="question row">
+        <div class="col-md-12">
+            <button id="launch-game" class="btn btn-block launchBtn fireModal" type="button" data-target="#game-modal">
+                {{ buttonText }}
+            </button>
+            <input type="hidden" id="launched" name="launched" value="{{ gameLaunched }}">
+        </div>
+    </div>
+    
+    <div id="game-modal" class="modal game-modal fade" tabindex="-1" role="dialog">
+        <div id="gameModal-content" class="modal-panel fw-modal">
+            <!-- <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button> -->
+            <iframe src="" id="slots-game" frameborder="0" class="fw-iframe" align="center" seamless></iframe>
+        </div>
+    </div>
+    
+    <div class="buttons"
+        data-qcontainer="0"
+        data-panel="{{ floorName }}"
+        data-pindex="{{ indexes.p }}"
+    >
+        <div class="row">
+            {{# nextPanel }}
+            <div class="col-md-6 col-md-push-6">
+                <button id="nextBtn{{ indexes.p }}" class="panelsLinkNext NxtBtn btn-block" type="button">{{ nextPanel }}</button>
+            </div>
+            {{/ nextPanel }}
+
+            {{# prevPanel }}
+            <div class="col-md-6 col-md-pull-6">
+                <button id="backBtn{{ indexes.p }}" class="panelsLinkPrev BckBtn btn-block" type="button">{{ prevPanel }}</button>
+            </div>
+            {{/ prevPanel }}
+        </div>
+    </div>
+    
+</div>

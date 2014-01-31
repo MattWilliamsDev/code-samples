@@ -1,0 +1,49 @@
+<div id="{{ floorName }}-content" class="question">
+    <div class="panel-head row">
+        <div class="col-md-10 header">
+            <h2 class="panel-title">
+                {{{ header }}}
+            </h2>
+        </div>
+
+        <div class="col-md-2">
+            <div class="panel-image">
+                <img src="img/1_spin.png" alt="+1 spin" />
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="col-md-12 subheader">
+            <div class="panel-subhead">
+                {{{ subhead }}}
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-12">
+        <div id="step-counter">
+            Question <span id="current-step">{{ qIndex }}</span> of <span id="step-count">{{ qCount }}</span>
+        </div>
+        
+        <div class="question row">
+            {{# fields }}
+            <div class="col-md-12">
+                <label for="{{ name }}" class="question-label">{{{ label }}}</label>
+                <input
+                type="{{ type }}"
+                name="{{ name }}"
+                placeholder="{{ placeholder }}"
+                value="{{ value }}"
+                {{#required}}required{{/required}}>
+            </div>
+            {{/ fields }}
+        </div>
+    </div>
+
+    {{# denote }}
+    <div class="denote">
+        {{{ denote }}}
+    </div>
+    {{/ denote }}
+</div>

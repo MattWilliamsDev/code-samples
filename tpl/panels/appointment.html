@@ -1,0 +1,121 @@
+<div id="{{ floorName }}-content">
+    <div class="panel-head row">
+        {{# header }}
+        <div class="col-md-10">
+            <h2 class="panel-title">
+                {{{ header }}}
+            </h2>
+        </div>
+        {{/ header }}
+
+        {{# spins.display }}
+        <div class="col-md-2">
+            <div class="panel-image">
+                <img src="img/{{ spins.display }}_spin.png" alt="+{{ spins.display }} spins" />
+            </div>
+        </div>
+        {{/ spins.display }}
+        <div class="clearfix"></div>
+    
+        {{# subhead }}
+        <div class="col-md-12 subheader">
+            <div class="panel-subhead">
+                {{{ subhead }}}
+            </div>
+        </div>
+        {{/ subhead }}
+
+        {{# denote }}
+        <div class="col-md-12">
+            {{{ denote }}}
+        </div>
+        {{/ denote }}
+
+        <div class="clearfix"></div>
+    </div>
+    
+    <div class="col-md-12">
+        <div id="step-counter">
+            Question <span id="current-step">{{ qIndex }}</span> of <span id="step-count">{{ qCount }}</span>
+        </div>
+
+        <div id="question{{ indexes.q }}" class="question">
+            {{# fields }}
+            
+            <div class="row">
+                {{# datepicker }}
+                <div class="col-md-12">
+                    {{# label }}
+                    <label for="{{ name }}" class="question-label">{{ label }}</label>
+                    {{/ label }}
+
+                    <input type="date" name="{{ name }}" id="{{ name }}" placeholder="Appointment Date (MM/DD/YYYY)" value="{{ value }}">
+                </div>
+                {{/ datepicker }}
+            </div>
+
+
+            <div class="row">
+                {{^ datepicker }}
+                <div class="col-md-12">
+                    {{# label }}
+                    <label for="{{ name }}" class="question-label">{{ label }}</label>
+                    {{/ label }}
+
+                    <select name="{{ name }}" id="{{ name }}" value="{{ value }}" class="form-control">
+                        <option value="default">- Select Time -</option>
+                    </select>
+                </div>
+                {{/ datepicker }}
+            </div>
+
+            {{/ fields }}
+
+            <input type="hidden" name="{{ floorName }}_id" value="{{ qId }}">
+        </div>
+    </div>
+
+    <div class="buttons"
+        data-isquestion="1"
+        data-qcontainer="{{# lastQuestion }}1{{/ lastQuestion }}{{^ lastQuestion }}0{{/ lastQuestion }}"
+        data-panel="{{ floorName }}"
+        data-pindex="{{ indexes.p }}"
+        data-qindex="{{ indexes.q }}"
+    >
+        <div class="row">
+            {{!# nextPanel }}
+            <div class="col-md-6 col-md-push-6">
+                <button id="nextBtn{{ indexes.p }}" class="panelsLinkNext NxtBtn btn-block" type="button">
+                    {{# nextPanel }}
+                        {{ nextPanel }}
+                    {{/ nextPanel }}
+                    {{^ nextPanel }}
+                        next
+                    {{/ nextPanel }}
+                </button>
+            </div>
+            {{!/ nextPanel }}
+
+            {{!# prevPanel }}
+            <div class="col-md-6 col-md-pull-6">
+                <button id="backBtn{{ indexes.p }}" class="panelsLinkPrev BckBtn btn-block" type="button">
+                    {{# prevPanel }}
+                        {{ prevPanel }}
+                    {{/ prevPanel }}
+                    {{^ prevPanel }}
+                        back
+                    {{/ prevPanel }}
+                </button>
+            </div>
+            {{!/ prevPanel }}
+
+            <div class="clearfix"></div>
+            
+            <div class="col-md-6 col-md-offset-6">
+                <a href="#" class="skip-questions">
+                    skip section
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

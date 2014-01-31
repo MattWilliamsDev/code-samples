@@ -1,0 +1,7 @@
+<select name="{{ name }}" id="{{ id }}" class="{{ className }}">
+    {{#options.length}}
+        {{#options:i}}
+        <option value="{{ value }}">{{ label }}</option>
+        {{/options}}
+    {{/options.length}}
+</select>

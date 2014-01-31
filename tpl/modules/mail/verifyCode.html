@@ -1,0 +1,67 @@
+<div class="row">
+
+    <div class="col-md-offset-1 col-md-10">
+        <!-- <div class="row form"> -->
+        <div class="row">
+            
+            <div class="col-md-6">
+                <div class="page-title">
+                    <h2>
+                        <strong>Looks Like You've Won!</strong><br>
+                        <small>Click "register" to claim your prize and enter the drawing for a grand prize of your choosing.</small>
+                    </h2>
+                </div>
+                
+                <form action="#" id="verifyCode-form" name="verifyCode-form" data-voptions="verifyCode">
+                    <div class="row form-group">
+                        <div class="col-md-12">
+                            <div class="row form-row">
+                                <!-- <div class="col-xs-6 col-sm-6 col-md-6"> -->
+                                <div class="col-md-12 form-actions">
+                                    <button class="btn btn-primary btn-block btn-nav" type="button" on-tap="navigate" href="questions" id="navButton">
+                                        register
+                                    </button>
+                                </div>
+
+                                <!-- <div class="col-xs-6 col-sm-6 col-md-6"> -->
+                                <div class="col-md-12">
+                                    <!-- <div class="help-block"> -->
+                                    <div class="helpertext">
+                                        You <strong>must</strong> visit the dealership to receive your prize after registering.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div> <!-- /.col-md-offset-1.col-md-6 -->
+
+            <div class="col-md-offset-2 col-md-4 winner">
+                {{#displayImage}}
+                <div class="pic">
+                    <img src="{{ defaultImage }}" class="img-circle">
+                </div>
+                <div class="name">{{ fname }} {{ lname }} (YOU)</div>
+                <div class="prize"> {{ defaultName }} </div>
+                {{/displayImage}}
+
+                {{^displayImage}}
+                <div class="pic">
+                    <img src="{{ collageImage }}" class="img-circle">
+                </div>
+                <div class="name">
+                    {{ fname }} {{ lname }} (YOU)
+                </div>
+                <div class="prize">
+                    VISIT DEALERSHIP TO OBTAIN PRIZE
+                </div>
+                {{/displayImage}}
+                <div class="city">
+                    {{ city }}, {{ state }}
+                </div>
+            </div> <!-- span -->
+
+        </div> <!-- /.row.form -->
+    </div>
+
+</div> <!-- /.row -->

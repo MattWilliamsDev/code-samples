@@ -1,0 +1,21 @@
+<div id="{{ floorName }}-content" class="modal-dialog fw-modal">
+    <div class="modal-content">
+        
+        <div class="modal-header">
+            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+            <h4>{{{ header }}}</h4>
+            {{# subhead }}
+            <p class="modal-text">{{{ subhead }}}</p>
+            {{/ subhead }}
+        </div>
+        
+        <div class="modal-body">
+            {{{ terms }}}
+        </div>
+
+        <div class="modal-footer">
+            <button type="button" data-dismiss="modal" class="btn fw-btn">{{ closeText }}</button>
+        </div>
+
+    </div>
+</div>

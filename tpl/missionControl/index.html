@@ -1,0 +1,186 @@
+<div id="navBar" class="col-md-1">
+    <div class="branding-top">
+        <a href="/">&nbsp;</a>
+        <!-- <img src="img/fwmark.png" height="20" width="16" title="FatWin" alt="FatWin"/> -->
+    </div>
+    <div class="content">
+        <ul class="nav-icons">
+            <li class="nav-item active">
+                <div class="profile-icon">
+                    <!-- <i class="profile-icon-white"> -->
+                        &nbsp;
+                    <!-- </i>    -->
+                </div>
+            </li>
+            
+            <li class="nav-item">
+                <div class="clock-icon">
+                    <!-- <i class="clock-icon-white"> -->
+                        &nbsp;
+                    <!-- </i>    -->
+                </div>
+            </li>
+                
+            <li class="nav-item">
+                <div class="link-icon">
+                    <!-- <i class="link-icon-white"> -->
+                        &nbsp;
+                    <!-- </i> -->
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<!-- <div class="clearfix"></div> -->
+
+<div id="missionCtrl" class="visible-md visible-lg">
+    {{# client }}
+    <div class="menuHeader">
+        <div class="logo" id="logo">
+            <img src="{{ logo }}" border="0" alt="" title="" />
+        </div>
+
+
+        <div class="social">
+            <ul class="socL">
+                {{# fb.enabled }}
+                <li id="FabS">
+                    <a href="{{ fb.url }}" title="Like Us!" target="_blank">
+                        <img src="img/facebook.png" alt="Facebook" />
+                    </a>
+                </li>
+                {{/ fb.enabled }}
+
+                {{# gplus.enabled }}
+                <li id="GlpS">
+                    <a href="{{ gplus.url }}" title="We love Circles!" target="_blank">
+                        <img src="img/g+.png" alt="Google+" />
+                    </a>
+                </li>
+                {{/ gplus.enabled }}
+                
+                {{# twitter.enabled }}
+                <li id="TwitS">
+                    <a href="{{ twitter.url }}" title="Follow Us!" target="_blank">
+                        <img src="img/tw.png" alt="Twitter" />
+                    </a>
+                </li>
+                {{/ twitter.enabled }}
+            </ul>
+        </div>
+
+        <div id="dealer-home">
+            <a href="{{ website }}" id="dealer-site">
+                Website
+            </a>
+        </div>
+
+    </div><!-- /.menuHeader -->
+    
+    {{#contact.length}}
+    <div id="contact">
+        <div class="location-icon"></div>
+        <div class="address">
+            <address>
+                {{ address.address }}<br>
+                {{# address.address2 }}{{ address.address2 }}<br>{{/ address.address2 }}
+                {{ address.city }}, {{ address.state }} {{ address.zip }}<br>
+                {{ phone }}
+            </address>
+            <!-- <address>
+                <?php // echo $client['address'] ?><br>
+                <?php // if ( $client['address2'] && $client['address2'] != '' ) echo $client['address2'] . '<br>' ?>
+                <?php // echo $client['city'] ?>, <?php // echo $client['state'] ?>
+                <?php // echo $client['zip'] ?>
+                <?php // if ( $client['phone'] && $client['phone'] != '' ): ?>
+                <br>
+                <b><?php // echo $client['phone'] ?></b>
+                <?php // if ( $client['phone_ext'] && $client['phone_ext'] != '' ) echo ' ' . $client['phone_ext'] ?>
+                <?php // endif; ?>
+            </address> -->
+        </div>
+    </div><!-- /#contact -->
+    {{/contact.length}}
+
+    {{/ client }}        
+    
+    {{#jackpots}}
+    <div id="jackpots">
+        <div class="jackpot-icon"></div>
+        <div class="jackpots">
+            
+            <!-- <div id="progressive" class="jackpot-large"> -->
+            <div id="progressive" class="jackpot jackpot-progressive">
+                <div class="jackpot-title">
+                    {{ progressive.title }}
+                </div>            
+                <div class="jackpot-value" id="progressive-value">
+                    {{ formatCurrency(progressive.value) }}
+                </div>
+                <div id="jackpot-notification">
+                    {{{ progressive.message }}}
+                </div>
+            </div>
+
+            <!-- <div id="ytd" class="jackpot-small"> -->
+            <div id="wtd" class="jackpot jackpot-ytd">
+                <div class="jackpot-title">
+                    {{ toDate.title }}
+                </div>            
+                <div class="jackpot-value" id="wtd-value">
+                    {{ formatCurrency(toDate.value) }}
+                </div>
+            </div>
+
+        </div><!-- /.jackpots -->
+    </div><!-- /#jackpots -->
+    {{/jackpots}}
+
+    <div class="menuContent">
+
+        <dl id="mainMenu" class="nav nav-list accordion">
+            <dt id="prizes">
+                <div id="prize-rotator" class="liquid-slider">
+                    {{# prizes }}
+
+                        {{# list }}
+                        <section>
+                            <!-- <p> -->
+                                <img src="{{ image }}" alt="{{ name }}" title="{{ name }}" border="0"/>
+                            <!-- </p> -->
+                        </section>
+                        {{/ list }}
+
+                        {{^ list }}
+                            {{# defaultPrize }}
+                            <section>
+                                <!-- <p> -->
+                                    <img src="{{ image }}" alt="{{ name }}" title="{{ name }}" border="0"/>
+                                <!-- </p> -->
+                            </section>
+                            {{/ defaultPrize }}
+                        {{/ list }}
+                    {{/ prizes }}
+                </div>
+                <div class="clearfix"></div>
+            </dt>
+            <dt id="winners-notified">
+                <img src="img/notify_graphic.png" alt="Winners will be notified by phone and email" title="Winners will be notified by phone and email"/>
+            </dt>
+            <dt id="rules">
+                <div id="regulations">
+                    <a href="#RulesModal" data-toggle="modal">Official Rules</a>
+                    <!-- <a href="#" data-target="#regulationsModal" data-toggle="modal" on-tap="fireModal">Official Rules</a> -->
+                </div>
+                <div id="copyright" class="menuFooter">
+                    &copy; Fatwin 2013
+                </div>
+            </dt>
+        </dl>
+        
+        {{>regulations}}
+
+    </div><!-- /.menuContent -->
+    
+</div><!-- /#missionCtrl -->

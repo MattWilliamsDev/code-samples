@@ -1,0 +1,69 @@
+.fwmail .btn-primary { 
+  background-color:#3D3D3D;
+  color:#f1f1f0;
+  border:none;
+  border-color:#ffffff;
+} 
+ 
+.fwmail .btn-primary:focus,
+.fwmail .btn-primary:hover:enabled,
+.fwmail .open .dropdown-toggle.btn-primary {
+  background: -moz-linear-gradient(top, rgb(61,61,61) 0%, rgb(53,53,53) 100%);
+  background: -webkit-linear-gradient(top, rgb(76,76,76) 0%,rgb(53,53,53) 100%);
+  color:#fff;
+  border-color:#ffffff;
+} 
+
+.fwmail .btn-primary:active:enabled,
+.fwmail .btn-primary:active, 
+.fwmail .btn-primary.active {
+  background: -webkit-linear-gradient(top, rgb(53,53,53) 0%,rgb(76,76,76) 100%);
+  border-color:#ffffff;
+}
+ 
+.fwmail .btn-primary:active, 
+.fwmail .btn-primary.active, 
+.fwmail .open .dropdown-toggle.btn-primary { 
+  background-image: none;
+  border-color:#ffffff; 
+} 
+ 
+.fwmail .btn-primary.disabled, 
+.fwmail .btn-primary[disabled], 
+.fwmail fieldset[disabled] .btn-primary, 
+.fwmail .btn-primary.disabled:hover, 
+.fwmail .btn-primary[disabled]:hover, 
+.fwmail fieldset[disabled] .btn-primary:hover, 
+.fwmail .btn-primary.disabled:focus, 
+.fwmail .btn-primary[disabled]:focus, 
+.fwmail fieldset[disabled] .btn-primary:focus, 
+.fwmail .btn-primary.disabled:active, 
+.fwmail .btn-primary[disabled]:active, 
+.fwmail fieldset[disabled] .btn-primary:active, 
+.fwmail .btn-primary.disabled.active, 
+.fwmail .btn-primary[disabled].active, 
+.fwmail fieldset[disabled] .btn-primary.active { 
+  background:#7f7f7f;
+  cursor:default;
+  color:#9e9e9e;
+  border-color:#ffffff;
+} 
+ 
+.fwmail .btn-primary .badge { 
+  color: #3D3D3D; 
+  background-color: #f1f1f0; 
+}
+
+/*
+.fwmail .full-size {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.fwmail .full-size button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}*/

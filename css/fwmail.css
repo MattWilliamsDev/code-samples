@@ -1,0 +1,702 @@
+/**
+ * Styles that override default Bootstrap styles for buttons, etc.
+ */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300);
+@import url(//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css);
+@import url(mail/bootstrap-overrides.css);
+
+body {
+	background: #d6d6d6;
+	font-size: 16px;
+	font-family: 'Open Sans', 'Helvetica', arial;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6, input, button {
+	font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+
+a {
+ text-decoration: none;
+}
+
+body a {
+	color: #0078ff;
+}
+
+h2 small {
+	font-size: 16px;
+}
+
+/* iframe style(s) */
+.credit {
+	width: 100%;
+	border: 1px solid #CACACA;
+}
+
+a.link-full {
+	min-height: 20px;
+	min-width: 20px;
+	display: block;
+	background: url(../img/fwmail/menuG_icon.png) no-repeat center;
+}
+
+.full-height a.link-full {
+	height: 4em;
+}
+
+.panel-group .panel,
+.panel-group .panel.panel-default {
+	border: none;
+	border-radius: 0;
+}
+
+.panel-group .panel .panel-heading,
+.panel-group .panel.panel-default .panel-heading {
+	padding: 0;
+	background-color: inherit;
+	color: inherit;
+	border: 1px solid;
+	border-width: 1px 0 0 0;
+	border-color: #555;
+}
+
+/*.panel-group .panel.panel-default .panel-collapse .panel-body,
+.panel-group .panel .panel-collapse .panel-body {
+	background: #1A1A1A;
+	font-size: 14px;
+	line-height: 2em;
+	border: 1px solid;
+	border-width: 1px 0;
+	border-color: #111;
+}*/
+
+.panel-body a,
+a.green {
+	color: #8CC640;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.center {
+	text-align: center;
+}
+
+.muted {
+	color: #999;
+}
+
+.help-block {
+	font-weight: 400;
+	font-size: 12px;
+	text-align: center;
+}
+
+.help-block strong {
+	font-weight: 600;
+}
+
+.wrapper {
+	padding: 0 15px;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.highlight {
+	font-weight: 800;
+	color: #8cc640;
+}
+
+/* .smallinfo */
+#infobar {
+	display: block;
+	font-size: 10px;
+	height: 2.5em;
+	line-height: 2.5em;
+	width: 100%;
+	color: #ababab;
+}
+
+#infobar .row {
+	background: #424242;
+	border: 1px solid;
+	border-width: 0 0 1px 0;
+	border-color: #555;
+}
+
+#sponsor {}
+
+#poweredby {
+	text-align: right;
+}
+
+.largeinfo,
+#jackpot-accordion .panel,
+#jackpot-accordion .panel.panel-default {
+	line-height: 4em;
+	font-size: 11px;
+	background: #303030;
+	color: #fff;
+	/*height: 4em;*/
+	/*width: 100%;*/
+}
+
+#jackpot-accordion .panel .stats,
+#jackpot-accordion .panel.panel-default .stats,
+.largeinfo .stats {
+	line-height: 2em;
+	text-align: center;
+	icon: more.png;
+}
+
+#jackpot-accordion .panel .full-height,
+#jackpot-accordion .panel.panel-default .full-height,
+.largeinfo .full-height {
+	line-height: 4em;
+}
+
+.region-separator {
+	min-height: 20px;
+	background: #ebebeb;
+	margin: 20px auto;
+}
+
+.info-section {
+	padding: 15px;
+	background: #ebebeb;
+	margin: 20px auto;
+	font: 14px normal 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.top {
+	background-color: #fff;
+	font-weight: 700;
+	font-size: 14px;
+	margin: -100px auto 0 auto;
+	/*margin-top: 23.21428em;*/
+	-webkit-box-shadow: 0 0.07143em 0.28571em 0.07143em rgba(1,2,2,0.2);
+	box-shadow: 0 0.07143em 0.28571em 0.07143em rgba(1,2,2,0.2);
+	padding: 3.57143em 3.57143em 0 3.57143em;
+	z-index: 50;
+    /*width: 100%;*/
+    /*position: absolute;*/
+}
+
+.top h1 {
+	font-size:2.28571em;
+}
+
+.top a {
+	font-size: 12px;
+}
+
+.form {
+	height: 16.07143em;
+	padding: 0 0 3.57143em 0;	
+}
+
+.form .text {
+	color: #858585;
+	font-size:12px;
+	text-align: right;
+}
+
+#header {
+	/* background: set in application/lib/style.inc.php */
+	text-align: center;
+	margin: 0 -15px;
+	padding: 0;
+	z-index: 5;
+	min-height: 400px;
+	display: block;
+    /*width: 100%;
+    height: 100%;
+    position: absolute;*/
+}
+
+#ribbon {
+	padding: .34em 1em;
+	margin: 0;
+	margin-top: 12.5em;
+	position:relative;
+	color:#fff;
+	text-align: center;
+	letter-spacing:0.1em;
+	text-shadow: 0px -1px 0px rgba(0,0,0,0.3);
+	/* background: set in application/lib/style.inc.php */
+	display: inline-block;
+	z-index:30;
+}
+
+#ribbon:before, #ribbon:after {
+	content: '';
+	width:.2em;
+	bottom:0em;
+	top:0em;
+	position:absolute;
+	display:block;
+	/* border: set in application/lib/style.inc.php */
+	z-index:10;
+}
+
+#ribbon.content:before, #ribbon.content:after {
+	content:'';
+	bottom:-.5em;
+	position:absolute;
+	display:block;
+	border-style:solid;
+/*	border-color: set in application/lib/style.inc.php*/
+	z-index:20;
+}
+
+#ribbon.content:before {
+	left: 0;
+	border-width: .5em 0 0 .5em;
+}
+
+#ribbon.content:after {
+	right: 0;
+	border-width: .5em .5em 0 0;
+}
+
+#codepop, #nadapop {
+	color: #0078ff;
+	font-size: 12px;
+}
+
+#codepop:hover, #nadapop:hover {
+	text-decoration: underline;
+}
+
+.popover-content {
+    font-weight: 400;
+}
+
+.company {
+	font-size: 10px;
+	color: #858585;
+	padding: 1em 0 0 0;
+}
+
+#terms {
+/*	margin-top:100em;*/
+	text-align: center;
+	padding: 1em 0 0 0;
+	bottom: 0;
+	font-weight: 400;
+}
+
+.btn-nav {
+  width : 10.71428em;
+  height: 2.5em;
+}
+
+.rectangle {
+	width:59.21428em;
+	height:1.57142em;
+	background:#ebebeb;
+	margin:0 auto;
+}
+
+.winnersContainer {
+	font-weight: 700;
+	font-color: #595959;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.winnersContainer h3 {
+	font-size: 18px
+}
+
+.winner {
+	padding: 1.42857em 0 1.42857em 0;
+	text-align:center;
+}
+.winner .img-circle {
+	height:9.85714em;
+	width:9.85714em;
+	border: 8px solid #e5e5e5;
+}
+
+.winner .name {
+	margin-top: 10px;
+	font-size: 12px;
+	color: #8cc640;
+	font-weight: 700;
+	text-transform: capitalize;
+}
+
+
+.winner .prize {
+	font-size: 14px;
+	color: #595959;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.winner .city {
+	font-size: 12px;
+	font-style: italic;
+	font-weight: 400;
+	text-transform: capitalize;
+}
+
+.winner.jackpot {
+	font-size: 16px;
+}
+
+.winner.jackpot .name {
+	font-size: 1em;
+}
+
+.winner.jackpot .city {
+	font-style: italic;
+	color: #aaa;
+	font-size: 0.875em;
+}
+
+.feedback,
+form .error,
+form .field.error, {
+	background: #f2c8c3;
+	border: 1px solid #e74c3c;
+	color:#e74c3c;
+	font-weight: 700;
+	font-size: 12px;
+}
+
+form .field {
+/*	width:20.83333em;*/
+	text-align:center;
+	border: 1px solid #b8b8b8;
+	color: #858585;
+	font-size:12px;	
+}
+
+form .error {
+	color: red;
+	height: 2.5em;
+}
+
+form .error a {
+	color: red;
+	text-decoration: underline;
+}
+
+form .valid,
+form .field.valid {
+	border-color: green;
+	color: ;
+	background: #fff;
+}
+
+form .helpertext {
+	margin-top: 10px;
+	font-size: 12px;
+	font-style: italic;
+	font-weight: 400;
+	text-align: center;
+}
+
+.extra-info {
+	font-weight: normal;
+	font-size: 12px;
+	padding-left: 15px;
+}
+
+.emphasis {
+	font-weight: bold;
+	font-style: italic;
+}
+
+.question-label {
+	padding-left: 30px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 16px;
+}
+
+.question-number {
+	font-size: 16px;
+	height: 50px;
+	width: 50px;
+	line-height: 50px;
+	text-align: center;
+	position: relative;
+	/* background: set in application/lib/style.inc.php */
+	color: #fff;
+	display: inline-block;
+	border-radius: 4px 0 0 4px;
+}
+
+.question-number:after {
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: transparent transparent transparent rgba(238, 164, 62, 0);
+	/* border-left-color: set in application/lib/style.inc.php */
+	border-width: 25px 0 25px 15px;
+	margin-top: -25px;
+}
+
+.row.form-row {
+	margin-bottom: 10px;
+}
+
+.row.form-separator {
+	margin: 10px 0;
+	display: block;
+	height: 10px;
+}
+
+.optional {
+	font-weight: normal;
+	font-style: italic;
+	font-size: 0.75em;
+}
+
+/**
+ * Grand Prize Button-Style "Checkboxes"
+ */
+.form-buttons {
+}
+
+.button-checkbox {
+	/*display: block;*/
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	cursor: pointer;
+	padding: 0 15px;
+	margin: 10px 0;
+	/*font-size: 1.2em;*/
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.button-checkbox div {
+	border-radius: 4px;
+}
+
+.button-checkbox.selected div,
+.button-checkbox.active div {
+	/* background-color: set in application/lib/style.inc.php */
+	color: #fff;
+}
+
+.button-checkbox.unselected div,
+.button-checkbox.deselected div,
+.button-checkbox.disabled div,
+.button-checkbox.inactive div {
+	background-color: #C6C7CA;
+	/*background-color: #3D3D3D;*/
+	color: #989898;
+}
+
+.button-checkbox.unselected div:hover,
+.button-checkbox.deselected div:hover,
+.button-checkbox.disabled div:hover,
+.button-checkbox.inactive div:hover {
+	/*background-color: #3D3D3D;*/
+	background: -webkit-linear-gradient(top, rgb(76,76,76) 0%,rgb(53,53,53) 100%);
+	color: #f1f1f0;
+}
+
+.fwmail .form-horizontal fieldset {
+	margin: 50px 0;
+}
+
+.fwmail .form-horizontal .control-label {
+	text-align: left;
+	padding-top: 0;
+}
+
+label.control-label {
+	margin-bottom: 0;
+}
+
+.control-label {
+	font-weight: bold;
+}
+
+.form .form-control-static {
+	font-weight: normal;
+	padding-top: 0px;
+}
+
+/* NADA Value Label Styles */
+.nada-container {
+	background: #282828;
+	color: #fff;
+	text-align: center;
+	margin: 20px auto;
+}
+
+.nada-logo {
+	height: 50px;
+	width: 50px;
+	line-height: 50px;
+	display: inline-block;
+	background: url(img/icons/nada-logo.png);
+}
+
+.nada-value-label {
+	height: 50px;
+	line-height: 50px;
+	font-weight: bold;
+}
+
+.nada-value {
+	height: 50px;
+	line-height: 50px;
+	font-weight: normal;
+}
+
+#nada-box:before {
+	content: "";
+	background: url(../img/nada.png) no-repeat center center;
+	width: 6.5em;
+	height: 6.5em;
+}
+
+#nada-box {
+	height: 6.57142em;
+	padding: 0 0 0 0;
+	background: #d01428;
+	color: #fff;
+	display: flex;
+	-webkit-border-radius: 3.28571em;
+	-webkit-border-top-right-radius: .4em;
+	-webkit-border-bottom-right-radius: .4em;
+	-moz-border-radius: 3.28571em;
+	-moz-border-radius-topright: .4em;
+	-moz-border-radius-bottomright: .4em;
+	border-radius: 3.28571em;
+	border-top-right-radius: .4em;
+	border-bottom-right-radius: .4em;
+}
+
+#nada-box h3 {
+	font-size: 1.65em;
+	padding: 0 1em;
+}
+
+#nada-box p {
+	font-weight: 300;
+	font-size: .75em;
+	padding: 0 2.5em;
+}
+
+.jackpot-title {
+	font-weight: bold;
+}
+
+p.jackpot-desc {
+	font-size: 16px;
+	line-height: 32px;
+}
+
+/*#nadapop {
+	padding: 0px;
+	margin: 0px;
+}
+
+.popover .content {
+	margin: 0;
+	padding: 0;
+}*/
+
+/* Credit Report Form Style(s) */
+iframe.credit {
+	min-height: 400px;
+}
+
+@media (min-width: 768px) {
+	.buffer {
+		margin-top: 0px;
+	}
+}
+
+@media (max-width: 768px) {
+	p.jackpot-desc {
+		font-size: 14px;
+		line-height: 28px;
+	}
+/*	.top {
+		margin: -250px auto 0 auto;
+	}
+
+	#ribbon {
+		margin-top: 5.75em;
+	}*/
+
+	.smallinfo, .livewinner, .stats {} 
+
+	.buffer {
+		margin-top: 10px;
+	}
+
+	#nada-box:before {
+		background: none;
+	}
+
+	#nada-box {
+		border-radius: 1em;	
+		height: 8em;	
+	}
+
+	#nada-box h3 {
+		font-size: 1.2em;
+		padding: 0 1em 0 0;		
+	}
+
+	#nada-box p {
+		font-weight: 300;
+		font-size: .75em;
+		padding: 0 .25em;
+	}
+
+	.m-break {
+		display:block;
+	}
+
+	.question-label {
+		font-size: 12px;
+		line-height: 26px;
+	}
+
+	.question-number {
+		font-size: 12px;
+		height: 26px;
+		width: 26px;
+		line-height: 26px;
+	}
+
+	.question-number:after {
+		border-width: 13px 0 13px 10px;
+		margin-top: -13px;
+	}
+}
+
+@media (max-width: 480px) {
+	p.jackpot-desc {
+		font-size: 12px;
+		line-height: 24px;
+	}
+
+	.top {
+		margin: -250px auto 0 auto;
+	}
+
+	#ribbon {
+		margin-top: 5.75em;
+	}
+}
+

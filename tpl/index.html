@@ -1,0 +1,76 @@
+<div id="panels">
+    {{# panels:i }}
+
+        {{# isPanel }}
+            <section class="panelsFloor" name="{{ floorName }}" id="{{ floorName }}" data-index="{{ floorNumber }}">
+                <form id="{{ floorName }}-form" action="Microsite/save" method="post" class="{{ inlineForm === true ? 'form-inline' : '' }}" role="form">
+                    <div class="panel-content">
+                    
+                        {{{ renderedTpl }}}
+
+                        <!-- <div class="buttons"
+                            data-qcontainer="0"
+                            data-panel="{{ floorName }}"
+                            data-pindex="{{ i }}"
+                        >
+                            {{# prevPanel }}
+                            <button id="backBtn{{ i }}" class="panelsLinkPrev BckBtn" type="button">{{ prevPanel }}</button>
+                            {{/ prevPanel }}
+
+                            {{# nextPanel }}
+                            <button id="nextBtn{{ i }}" class="panelsLinkNext NxtBtn" type="button">{{ nextPanel }}</button>
+                            {{/ nextPanel }}
+                        </div> -->
+
+                    </div>
+                </form>
+            </section>
+        {{/ isPanel }}
+
+        {{# isModal }}
+            <div id="{{ floorName }}Modal" class="modal fade" data-index="{{ i }}" tabindex="-1" role="dialog">
+                {{{ renderedTpl }}}
+            </div>
+        {{/ isModal }}
+
+        {{# isQContainer }}            
+            <section class="panelsFloor" name="{{ floorName }}" id="{{ floorName }}" data-index="{{ floorNumber }}">
+                <div class="panel-content">
+                    <div id="{{ floorName }}-content" class="questions">
+
+                    {{# questions:c }}
+                        <div id="{{ floorName }}" class="question{{^ c === 0 }} noShow{{/ c }}">
+                            <form id="{{ floorName }}-form" action="Microsite/save" method="post" class="{{ inlineForm === true ? 'form-inline' : '' }}" role="form">
+
+                                {{{ renderedTpl }}}
+
+                                <!-- <div class="buttons"
+                                    data-isquestion="1"
+                                    data-pindex="{{ pIndex }}"
+                                    data-qindex="{{ qIndex }}"
+                                    data-panel="{{ floorName }}"
+                                    data-qcontainer="{{# lastQuestion }}1{{/ lastQuestion }}{{^lastQuestion }}0{{/lastQuestion }}"
+                                >
+                                    {{# prevPanel }}
+                                        <button id="qBackBtn{{ qIndex }}" class="panelsLinkPrev qBtnPrev qBtn BckBtn secondary" type="button">{{ prevPanel }}</button>
+                                    {{/ prevPanel }}
+
+                                    {{# nextPanel }}
+                                        <button id="qNextBtn{{ qIndex }}" class="panelsLinkNext qBtnNext qBtn NxtBtn" type="button">{{ nextPanel }}</button>
+                                    {{/ nextPanel }}
+
+                                    <a href="#" id="skip-questions">
+                                        skip section
+                                    </a>
+                                </div> -->
+                            </form>
+                        </div>
+                    {{/ questions }}
+                    
+                    </div><!-- /#qContainer-content -->
+                </div>
+            </section>
+        {{/ isQContainer }}
+
+    {{/ panels }}
+</div>

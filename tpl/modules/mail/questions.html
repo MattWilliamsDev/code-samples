@@ -1,0 +1,339 @@
+<div class="row">
+    <div class="col-md-offset-1 col-md-10">
+
+            <div class="row">
+                <div class="col-md-12" id="questions-header">
+                    <div class="page-title">
+                        <h2>
+                            <strong>Winner Registration</strong><br>
+                            <small>To receive your prize, fill out the form below.  You <span class="emphasis">must visit the dealership</span> in order to claim your winnings!</small>
+                        </h2>
+                    </div>
+                </div>
+
+                <div class="region-separator col-md-12"></div>
+
+                <div class="col-md-12">
+                    <form action="#" method="post" name="questions-form" id="questions-form" class="form-horizontal" data-voptions="questions">
+                        <fieldset>
+                            <div class="row form-group">
+                                <div class="col-md-5">
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 question-number">
+                                            1
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8 question-label">
+                                            <label for="prize" class="control-label">
+                                                Choose Your Grand Prize:
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-7">
+                                    <div class="row form-buttons">
+                                        <!-- <div class="container"> -->
+                                            {{# grandPrize.prizes : i }}
+                                            <div class="col-md-6 button-checkbox {{ status }}" id="grandPrize-{{ i }}" on-tap="select">
+                                                <div>
+                                                    {{{ name }}}
+                                                </div>
+                                            </div>
+                                            {{/ grandPrize.prizes }}
+
+                                            <input type="hidden" id="{{ grandPrize.input }}" name="{{ grandPrize.input }}" value="{{ grandPrize.selected }}">
+                                        <!-- </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <div class="row form-group">
+                                <div class="col-md-5">
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 question-number">
+                                            2
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8">
+                                            <div class="row">
+                                                
+                                                <!-- <div class="col-xs-12 col-sm-8 col-md-12 question-label"> -->
+                                                <div class="col-md-12 question-label">
+                                                    Recipient Details:
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <p class="extra-info">
+                                                        We will contact you directly if you are a <span class="emphasis">grand prize</span> winner!
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-7">
+                                    <div class="row form-row">
+                                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                            <label for="fname" class="sr-only">First Name</label>
+                                            <input type="text" class="form-control buffer" id="fname" name="fname" value="{{ fname }}" placeholder="First Name">
+                                        </div>
+
+                                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                            <label for="lname" class="sr-only">Last Name</label>
+                                            <input type="text" class="form-control buffer" id="lname" name="lname" value="{{ lname }}" placeholder="Last Name">
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-row">
+                                        <div class="col-md-12">
+                                            <label for="email" class="sr-only">Email Address</label>
+                                            <input type="text" class="form-control" id="email" name="email" placeholder="Email" value="{{ email }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-row">
+                                        <div class="col-md-12">
+                                            <label for="phone" class="sr-only">Phone Number</label>
+                                            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone #" value="{{ phone }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-separator"></div>
+
+                                    <div class="row form-row">
+                                        <div class="col-md-12">
+                                            <p>
+                                                If you could get a new or used vehicle for the same or less than what you pay now, when would you be ready to buy?
+                                            </p>
+                                        </div>
+                                        
+                                        <div class="col-md-12">
+                                            <label class="radio-inline">
+                                                <input type="radio" on-change="setTimeframe" name="timeframe" value="now"> Now!
+                                            </label>
+                                            
+                                            <label class="radio-inline">
+                                                <input type="radio" on-change="setTimeframe" name="timeframe" value="3 Months"> 3 Months
+                                            </label>
+                                            
+                                            <label class="radio-inline">
+                                                <input type="radio" on-change="setTimeframe" name="timeframe" value="6 Months"> 6 Months
+                                            </label>
+                                            
+                                            <label class="radio-inline">
+                                                <input type="radio" on-change="setTimeframe" name="timeframe" value="Year"> Year
+                                            </label>
+                                            
+                                            <label class="radio-inline">
+                                                <input type="radio" on-change="setTimeframe" name="timeframe" value="none"> Not Now
+                                            </label>
+                                        </div>
+                                    </div>
+                                    
+                                    {{# (timeframe != 'none') }}
+                                        <div class="row form-separator"></div>
+
+                                        <div class="row form-row">
+                                            <div class="col-md-12">
+                                                <p>
+                                                    <b>Will you buy new or used?</b>
+                                                </p>
+                                            </div>
+                                            
+                                            <div class="clearfix"></div>
+
+                                            <div class="col-md-12">
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="newUsed" on-change="setNewUsed" value="new"> New
+                                                </label>
+
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="newUsed" on-change="setNewUsed" value="used"> Used
+                                                </label>
+
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="newUsed" on-change="setNewUsed" value="unsure"> Not Sure
+                                                </label>
+                                            </div>
+                                        </div>
+                                        
+                                        {{^ client.nada.off }}
+                                        <div class="row form-separator"></div>
+                                        
+                                        <div class="row form-row">
+                                            <div class="col-md-12">
+                                                <p>
+                                                    What are you currently driving?
+                                                </p>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row form-row">
+                                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                                <select name="year" id="year" class="form-control" placeholder="Year" value="{{ vehicle.year }}" on-change="setYear">
+                                                    <option value="">Year</option>
+                                                    {{# nada.years }}
+                                                    <option value="{{ value }}">{{ label }}</option>
+                                                    {{/ nada.years }}
+                                                </select>
+                                            </div>
+                                            
+                                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                                <select name="make" id="make" class="form-control" placeholder="Make" value="{{ vehicle.make }}" on-change="setMake">
+                                                    <option value="">Make</option>
+                                                    {{# nada.makes }}
+                                                    <option value="{{ . }}">{{ . }}</option>
+                                                    {{/ nada.makes }}
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="row form-row">
+                                            <div class="col-md-12">
+                                                <select name="model" id="model" class="form-control" placeholder="Model" value="{{ vehicle.model }}" on-change="setModel">
+
+                                                    <option value="">Model</option>
+                                                    {{# nada.models }}
+                                                    <option value="{{ . }}">{{ . }}</option>
+                                                    {{/ nada.models }}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        {{^ client.nada.aggressive }}
+                                        <div class="row form-row">
+                                            <div class="col-md-12">
+                                                <select name="trim" id="trim" class="form-control" placeholder="Trim" value="{{ vehicle.trim }}" on-change="setTrim">
+
+                                                    <option value="">Trim</option>
+                                                    {{# nada.trims }}
+                                                    <option value="{{ . }}">{{ . }}</option>
+                                                    {{/ nada.trims }}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row form-row">
+                                            <div class="col-md-12">
+                                                <select name="condition" id="condition" class="form-control" placeholder="Condition" value="{{ vehicle.condition }}" on-change="setCondition">
+
+                                                    <option value="">Condition</option>
+                                                    {{# nada.conditions }}
+                                                    <option value="{{ . }}">{{ . }}</option>
+                                                    {{/ nada.conditions }}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        {{/ client.nada.aggressive }}
+                                        
+                                        <div class="row form-row">
+                                            <div class="col-md-12">
+                                                <select name="mileage" id="mileage" class="form-control" placeholder="Mileage" value="{{ vehicle.mileage }}" on-change="setMileage">
+                                                    <option value="">Mileage</option>
+                                                    
+                                                    {{# nada.miles }}
+                                                    <option value="{{ value }}">{{ label }}</option>
+                                                    {{/ nada.miles }}
+                                                </select>
+                                            </div>
+                                        </div>
+                                        {{/ client.nada.off }}
+                                        <div class="row form-separator"></div>
+
+                                         <div class="row form-row">
+                                            <div class="col-md-12">
+                                                <div id="nada-box" class="form-control">
+                                                        {{^ vehicle.value }}
+                                                        <div class="pull-right"><h3><strong>Did You Know?</strong></h3>
+                                                            <p>Used vehicles are <i>still</i> the most in-demand car today!</p>
+                                                        </div>
+                                                        {{/ vehicle.value }}
+                                                         {{# vehicle.value }}
+                                                        <div class="pull-right">
+                                                            <h3>NADA Book Value: <strong>{{ currency(vehicle.value) }}</strong>*</h3>
+                                                            <p>* {{ vehicle.year }} {{ vehicle.make }} {{ vehicle.model }} are in high demand!</p>
+                                                        </div>
+                                                        {{/ vehicle.value }}
+                                                </div>
+                                                <div id="nadapop" rel="popover "class="pull-right">what is NADA?</div>
+                                            </div>
+                                        </div>
+                                        <input type="hidden" id="value" name="value" value="{{ vehicle.value }}" on-change="updateValue">
+                                    {{/ () }}
+                                
+                                </div>
+                            </div>
+
+                        </fieldset>
+                        <fieldset>
+                            <div class="row form-group">
+                                <div class="col-md-5">
+                                    <div class="row">
+                                        <div class="col-xs-4 col-sm-4 col-md-4 question-number">
+                                            3
+                                        </div>
+                                        <div class="col-xs-8 col-sm-8 col-md-8">
+                                            <div class="row">
+                                                
+                                                <!-- <div class="col-xs-12 col-sm-8 col-md-12 question-label"> -->
+                                                <div class="col-md-12 question-label">
+                                                    Appointment <span class="optional">(Optional)</span>:
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <p class="extra-info">
+                                                        Schedule an appointment and receive a <span class="emphasis">{{ client.apptincentive }}</span>!
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-xs-12 col-sm-12 col-md-7">
+                                    <div class="row form-row">
+                                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                            <label for="apptDate" class="sr-only">Appointment Date</label>
+                                            <input type="date" name="apptDate" id="apptDate" class="form-control buffer" placeholder="Select a date (mm/dd/yyyy)" value="{{ apptDate }}" on-change="setApptDate">
+                                        </div>
+                                        
+                                        <div class="col-xs-12 col-sm-6 col-md-6">
+                                            <select name="apptTime" id="apptTime" class="form-control buffer" placeholder="Select a time" value="{{ apptTime }}" on-change="setApptTime">
+                                                {{# appt.times }}
+                                                <option value="{{ value }}">{{ label }}</option>
+                                                {{/ appt.times }}
+                                            </select>
+                                        </div>
+
+                                        <div class="clearfix"></div>
+
+                                        <div class="col-md-12">
+                                            <span class="help-block">
+                                                <b>Need a different date &amp; time?</b> Call {{ client.contactName }} at {{ client.phone }}
+                                            </span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </fieldset>
+                        
+                        <div class="row form-group">
+                            <div class="col-xs-12 col-sm-offset-6 col-sm-6 col-md-offset-6 col-md-6 form-actions">
+                                <!-- <div class="col-xs-12 col-sm-offset-6 col-sm-6 col-md-offset-6 col-md-6"> -->
+
+                                    <button class="btn btn-default btn-primary btn-block pull-right btn-nav" href="confirmation" proxy-tap="setLead" type="submit">continue</button>
+                                    <!-- <button class="btn btn-default btn-primary pull-right btn-block" type="button" on-tap="submit">Submit</button> -->
+                                
+                                <!-- </div> -->
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        
+    </div>
+</div>

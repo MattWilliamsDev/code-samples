@@ -1,0 +1,181 @@
+<div id="{{ floorName }}-content" class="modal-dialog fw-modal" tabindex="-1" role="dialog">
+    <div class="modal-content">
+
+        <div class="modal-header">
+            <button aria-hidden="true" data-dismiss="modal" class="close" type="button">
+                ×
+            </button>
+                
+            <div class="row">
+                <div class="col-md-12">
+                    <i class="{{ icon }}-icon pull-right"></i>
+                    <h4>{{{ header }}}</h4>
+                    <p class="modal-text no-margin">{{{ subhead }}}</p>
+                </div>
+            </div>
+                
+        </div>
+        
+        <div class="modal-body">
+            
+            <div id="offer-details" class="row">
+                <div class="col-md-12">
+                    <div id="offer-head" class="row">
+                        
+                        <div class="col-xs-12 col-sm-6 col-md-6" class="user-info">
+                            <dl class="no-margin">
+                                <dt>{{ offer.user.name }}</dt>
+                                <dd>{{ offer.user.vehicle }}</dd>
+                            </dl>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-6 col-md-6" class="dealer-info">
+                            <dl class="no-margin">
+                                <dt>Authorized Dealer:</dt>
+                                <dd>
+                                    <address class="no-margin">
+                                    {{# offer.dealer }}
+                                        {{ name }}<br>
+                                        {{ address.address }}<br>
+                                        {{ address.city }}, {{ address.state }} {{ address.zip }}<br>
+                                    {{/ offer.dealer }}
+                                    </address>
+                                </dd>
+                            </dl>
+                            <!-- <b>Authorized Dealer:</b> -->
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <table id="nada-value-table" cols="10" class="modal-table">
+                                        {{# showBonus }}
+                                        <tr>
+                                            <th colspan="5">
+                                                <h5>NADA BOOK VALUE</h5>
+                                            </th>
+                                            <td colspan="2">&nbsp;</td>
+                                            <td colspan="3" class="value">
+                                                {{# toCurrency }}
+                                                offer.user.value
+                                                {{/ toCurrency }}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th colspan="5">
+                                                <h5 class="no-margin">
+                                                    120% TRADE BONUS<br>
+                                                    <small class="highlight">offer expires: {{ offer.expires }}</small>
+                                                </h5>
+                                            </th>
+                                            <td colspan="1">
+                                                &nbsp;
+                                            </td>
+                                            <td colspan="1" class="highlight">
+                                                <b>+</b>
+                                            </td>
+                                            <td colspan="3" class="highlight value">
+                                                {{# toCurrency }}
+                                                offer.user.bonus
+                                                {{/ toCurrency }}
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td colspan="10">
+                                                <div class="hr"></div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <th colspan="7">
+                                                <h5>TOTAL:</h5>
+                                            </th>
+                                            <td colspan="3" class="highlight value">
+                                                {{# toCurrency }}
+                                                offer.user.tradeTotal
+                                                {{/ toCurrency }}
+                                            </td>
+                                        </tr>
+                                        {{/ showBonus }}
+
+                                        {{^ showBonus }}
+                                        <tr>
+                                            <th colspan="5">
+                                                <h5>Estimated Trade Value:</h5>
+                                            </th>
+                                            <td colspan="2">&nbsp;</td>
+                                            <td colspan="3" class="highlight value">
+                                                {{# toCurrency }}
+                                                offer.user.value
+                                                {{/ toCurrency }}
+                                            </td>
+                                        </tr>
+                                        {{/ showBonus }}
+                                    </table>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-12">
+                            {{# terms }}
+                                {{ terms }}
+                            {{/ terms }}
+
+                            {{^ terms }}
+                                <p class="fine-print">
+                                    Estimated book value is based on {{ offer.user.vehicle }}.  This vehicle is used for example purposes only to communicate the 120% incentive and your actual appraisal book value will be based on the model, mileage, options, and condition of your exact vehicle at the dealership.  120% incentive valid when trading for pre-owned vehicle only.
+                                </p>
+                            {{/ terms }}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div id="offer-denote" class="row">
+                <div class="required-items">
+                    <div class="col-md-12">
+                        Please Bring:
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-5 center">
+                                Vehicle Title / Payment Book
+                            </div>
+                            <div class="col-md-3 center">
+                                Photo ID
+                            </div>
+                            <div class="col-md-4 center">
+                                Keys &amp; Remotes
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4 col-md-offset-2 center">
+                                Vehicle Registration
+                            </div>
+                            <div class="col-md-4 center">
+                                Owner's Manual
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /.modal-body -->
+
+        <div class="modal-footer">
+            <button type="button" data-dismiss="modal" class="btn fw-btn">
+                {{ closeText }}
+            </button>
+        </div>
+
+    </div>
+</div>

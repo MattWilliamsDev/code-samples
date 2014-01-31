@@ -1,0 +1,198 @@
+<div id="preferred-location-content">
+    <div class="panel-head row">
+        {{# header }}
+        <!-- <div class="col-md-10 header"> -->
+            <h2 class="panel-title">
+                {{{ header }}}
+            </h2>
+        {{/ header }}
+         <div class="col-md-2">
+            <div class="panel-image">
+            	{{#spins.display}}
+                <img src="img/{{ spins.display }}_spin.png" alt="+{{ spins.display }} spins" />
+            	{{/spins.display}}
+            </div>
+        </div>
+        {{# subhead }}
+            <div class="panel-subhead">
+                {{{ subhead }}}
+            </div>
+        {{/ subhead }}
+        <!-- </div> -->
+    </div>
+    
+    <div class="col-md-12">
+        <div id="step-counter">
+            Question <span id="current-step">{{ qIndex }}</span> of <span id="step-count">{{ qCount }}</span>
+        </div>
+
+        <div id="nada-survey-wrap">
+            <div id="question{{ qIndex }}" class="question row">
+                {{# fields.year }}            
+                <div class="col-md-12">
+                    <select name="{{ name }}" id="{{ name }}" value="{{ value }}" class="form-control nada" data-qindex="{{ qIndex }}">
+                        <option value="">{{ placeholder }}</option>
+                        {{# options }}
+
+                            {{# value }}
+                            <option value="{{ value }}">{{{ label }}}</option>
+                            {{/ value }}
+
+                        {{/ options }}
+                    </select>
+                </div>
+                {{/ fields.year }}
+
+                {{# fields.make }}
+                <div class="col-md-12">
+                    <select name="{{ name }}" id="{{ name }}" class="form-control nada" data-qindex="{{ qIndex }}">
+                        <option value="">{{ placeholder }}</option>
+                        {{# options }}
+
+                            {{# value }}
+                            <option value="{{ value }}">{{{ label }}}</option>
+                            {{/ value }}
+
+                        {{/ options }}
+                    </select>
+                </div>
+                {{/ fields.make }}
+
+                {{# fields.model }}
+                <div class="col-md-12">
+                    <select name="{{ name }}" id="{{ name }}" value="{{ value }}" class="form-control nada" data-qindex="{{ qIndex }}">
+                        <option value="">{{ placeholder }}</option>
+                        {{# options }}
+
+                            {{# value }}
+                            <option value="{{ value }}">{{{ label }}}</option>
+                            {{/ value }}
+
+                        {{/ options }}
+                    </select>
+                </div>
+                {{/ fields.model }}
+
+                <input type="hidden" name="{{ floorName }}_id" value="{{ qId }}">
+            </div>
+        </div>
+
+        <input type="hidden" name="estimated-value" id="estimated-value" value="{{ value }}">
+        <input type="hidden" name="trade-bonus" id="trade-bonus" value="{{ bonus }}">
+        <input type="hidden" name="trade-total" id="trade-total" value="{{ total }}">
+        <input type="hidden" name="based-on" id="based-on" value="{{ basedOn }}">
+        
+        <div id="nada-value-wrap" class="noShow">
+            <div class="question row" id="nada-totals">
+
+            {{# showBonus }}
+                {{# fields.value }}
+                    <div class="col-md-12">
+                        <div class="col-xs-6 col-sm-6 col-md-6 nada-label">
+                            <i class="nada-icon"></i> NADA Book Value:
+                        </div>
+
+                        <div id="estimated-value-display" class="col-xs-6 col-sm-6 col-md-6 nada-estimate">
+                            <span>{{ value }}</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="col-xs-6 col-sm-6 col-md-6 nada-label">
+                            120% Trade Bonus:
+                        </div>
+
+                        <div id="trade-bonus-display" class="col-xs-6 col-sm-6 col-md-6 nada-estimate green">
+                            + <span>{{ bonus }}</span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div id="trade-total-display" class="col-xs-12 col-sm-12 col-md-12 nada-estimate">
+                            <small class="super">Up to</small>
+                            <span id="nada-total">{{ total }}</span>
+                            <span> * </span>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                {{/ fields.value }}
+            {{/ showBonus }}
+
+            {{^ showBonus }}
+                <div class="col-md-12">
+                    <div class="col-xs-6 col-sm-6 col-md-6 nada-label">
+                        <i class="nada-icon"></i> Estimated Trade Value:
+                    </div>
+
+                    <div id="estimated-value-display" class="col-xs-6 col-sm-6 col-md-6 nada-estimate">
+                        <span>
+                        {{# toCurrency }}
+                        fields.value.value
+                        {{/ toCurrency }}</span>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            {{/ showBonus }}
+
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <small>* appraisal needed</small>
+                    <div class="clearfix"></div>
+                </div>
+                
+                <div class="col-xs-12 col-sm-6 col-md-6">
+                    <a href="#" class="fireModal" data-target="#NadaDetailsModal">
+                        more details
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="buttons"
+        data-isquestion="1"
+        data-qcontainer="{{# lastQuestion }}1{{/ lastQuestion }}{{^ lastQuestion }}0{{/ lastQuestion }}"
+        data-panel="{{ floorName }}"
+        data-pindex="{{ indexes.p }}"
+        data-qindex="{{ indexes.q }}"
+    >
+        <div class="row">
+            {{!# nextPanel }}
+            <div class="col-md-6 col-md-push-6">
+                <button id="nextBtn{{ indexes.p }}" class="panelsLinkNext NxtBtn btn-block" type="button">
+                    {{# nextPanel }}
+                        {{ nextPanel }}
+                    {{/ nextPanel }}
+                    {{^ nextPanel }}
+                        next
+                    {{/ nextPanel }}
+                </button>
+            </div>
+            {{!/ nextPanel }}
+
+            {{!# prevPanel }}
+            <div class="col-md-6 col-md-pull-6">
+                <button id="backBtn{{ indexes.p }}" class="panelsLinkPrev BckBtn btn-block" type="button">
+                    {{# prevPanel }}
+                        {{ prevPanel }}
+                    {{/ prevPanel }}
+                    {{^ prevPanel }}
+                        back
+                    {{/ prevPanel }}
+                </button>
+            </div>
+            {{!/ prevPanel }}
+
+            <div class="clearfix"></div>
+            
+            <div class="col-md-6 col-md-offset-6">
+                <a href="#" class="skip-questions">
+                    skip section
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

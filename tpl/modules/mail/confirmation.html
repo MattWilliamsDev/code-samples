@@ -1,0 +1,225 @@
+<div class="row">
+    <div class="col-md-offset-1 col-md-10">
+        <div class="row">
+
+            <div id="complete-header" class="col-xs-12 col-sm-4 col-md-4">
+                <div class="page-title">
+                    <h2>
+                        <strong>You're Done!</strong>
+                        <br>
+                        <small>Looks like you are all set! Simply take your mail piece to {{ client.name }} to claim your prize.</small>
+                    </h2>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-8 col-md-8">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- credit report -->
+                        <iframe src="{{ creditUrl }}" id="credit-form" class="credit" frameborder="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="region-separator col-md-12"></div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-offset-1 col-md-offset-1 col-xs-12 col-sm-4 col-md-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4><strong>Your Details Summary &amp; Custom Appraisal Offer:</strong></h4>
+                    </div>
+                    <div class="col-md-12">
+                        {{# client.livedates.start }}
+                        <p class="extra-info">
+                            Valid {{ date(client.livedates.start) }} - {{ date(client.livedates.stop) }}
+                        </p>
+                        {{/ client.livedates.start }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-7 col-md-7">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form action="#" class="form" role="form">
+
+                            <div class="row form-group">
+                                <div class="col-sm-6">
+                                    <label class="col-md-12 control-label">
+                                        Name:
+                                    </label>
+                                    <div class="col-md-12">
+                                        <p class="form-control-static">
+                                            {{ fullname() }}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6">
+                                    <label class="col-md-12 control-label">
+                                        Address:
+                                    </label>
+                                    <div class="col-md-12">
+                                        <address class="form-control-static">
+                                            {{{ address() }}}
+                                        </address>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-sm-6">
+                                    <label class="col-md-12 control-label">
+                                        Vehicle Information:
+                                    </label>
+                                    <div class="col-md-12">
+                                        <p class="form-control-static">
+                                            {{ vehicle() }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <label class="col-md-12 control-label">
+                                        Authorized Dealer:
+                                    </label>
+                                    <div class="col-md-12">
+                                        <p class="form-control-static">
+                                            {{ client.name }}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col-sm-offset-6 col-md-offset-6 col-xs-12 col-sm-6 col-md-6">
+                                    <label class="col-md-12 control-label">
+                                        Representative:
+                                    </label>
+                                    <div class="col-md-12">
+                                        <p class="form-control-static">
+                                            {{ client.contactName }}
+                                        </p>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+
+                            <!-- <div class="nada-container"> -->
+                            <div class="row form-group form-row nada-container">
+                                
+                                <div class="nada-logo col-xs-4 col-sm-1 col-md-1">
+                                    <!-- <i class="nada-logo"></i> -->
+                                </div>
+
+                                <div class="col-xs-8 col-sm-10 col-md-10">
+                                    <span class="nada-value-label">
+                                        NADA Book Value:
+                                    </span>
+                                    <span class="nada-value">
+                                        {{ currency(customer.tcusquestions_value) }}
+                                    </span>
+                                </div>
+
+                                <div class="clearfix"></div>
+                            
+                            </div>
+                        <!-- </div> -->
+
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- <div class="row form-group">
+                    <div class="col-md-12"> -->
+                        
+                    <!-- </div>
+                </div> -->
+
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="info-section col-md-12">
+                
+                <div class="row form-row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <small>
+                            Estimated Book Value is based on {{ customer.tcusquestions_vehicle }}, 12,000 annual miles, and in clean condition.  This vehicle is used for example purposes only.  Your actual appraisal book value will be based on the model, mileage, options, &amp; condition of your exact vehicle at the dealership.
+                        </small>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <strong>PLEASE BRING THE FOLLOWING ITEMS</strong>
+                            </div>
+                            <div class="col-sm-6">
+                                Vehicle Title
+                            </div>
+                            <div class="col-sm-6">
+                                Photo ID
+                            </div>
+                            <div class="col-sm-6">
+                                Payment Book
+                            </div>
+                            <div class="col-sm-6">
+                                Owner's Manual
+                            </div>
+                            <div class="col-sm-6">
+                                Vehicle Registration
+                            </div>
+                            <div class="col-sm-6">
+                                Keys &amp; Remote(s)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Credit Report Modal -->
+<div id="credit-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="credit-report-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" type="button" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 id="credit-report-label" class="modal-title">
+                    Credit Report Request Form
+                </h4>
+            </div>
+
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form action="#" id="credit-report-form" name="credit-report-form" class="form-horizontal" data-voptions="credit" method="post">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, perferendis, rem quisquam iste quod totam iusto delectus eius ut? Culpa, veniam, facere, dicta id officiis ea iste deserunt nemo delectus facilis amet cumque quisquam assumenda harum dolorem fugit iure nisi?
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-6">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

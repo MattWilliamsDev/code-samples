@@ -1,0 +1,86 @@
+<div id="{{ floorName }}Modal-content" class="modal-dialog modal-panel">
+    <div class="modal-content">
+        <div class="modal-body {{ theme }}">
+            <div class="row">
+                <div class="col-sm-2 col-md-2 visible-md visible-lg">
+                    <img src="img/poweredby.png" alt="Powered by Fatwin">
+                </div>
+
+                <div class="col-sm-10 col-md-10">
+                    <button aria-hidden="true" data-dismiss="modal" class="close visible-md visible-lg" type="button">×</button>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="{{# image }}col-md-6{{/ image }}{{^ image }}col-md-12{{/ image }}" id="intro-top">
+                    <div class="row">
+                        {{# theme === 'taxmatch' }}
+                        <div class="hidden-xs hidden-sm col-md-12">
+                            <img src="img/taxmatch_logo.png" alt="TaxMatch" border="0">
+                        </div>
+                        {{/ theme === 'taxmatch' }}
+                        
+                        <div class="hidden-xs hidden-sm col-md-12">
+                            <h4>{{{ header }}}</h4>
+                            <p class="modal-text">{{{ subhead }}}</p>
+                            
+                            <div class="button">
+                                <!-- <button id="startBtn" type="button" class="btn col-md-12">Get Started!</button> -->
+                                <button id="startBtn" type="button" data-dismiss="modal" class="btn fw-btn">
+                                    Get Started!
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="asterisk col-xs-12 col-sm-12 col-md-12">
+                            {{ denote }}
+                        </div>
+                    </div>
+                </div>
+                
+                {{# image }}
+                <div class="hidden-xs hidden-sm col-md-6">
+                    <div class="game-logo">
+                        <!-- Speed Slots Logo Here -->
+                        <!-- <img src="img/slots_logo.png" alt="Speed Slots"> -->
+                        <img src="{{ image }}" />
+                    </div>
+                </div>
+                {{/ image }}
+                
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <div class="modal-footer visible-sm visible-md visible-lg">
+            <div class="row">
+                <div class="col-sm-12 col-md-12" id="intro-bot">
+                    <h4>
+                        3 Easy Steps to Play<br>
+                        <small>Winning should never be complicated.</small>
+                    </h4>
+                    <div class="col-sm-12 col-md-12">
+                        <ul id="steps-to-play">
+                            <li id="step1" class="col-sm-4 col-md-4 step">
+                                <img src="{{ step1img }}" alt="Step 1: Register">
+                            </li>
+                            <li id="step2" class="col-sm-4 col-md-4 step">
+                                <img src="{{ step2img }}" alt="Step 2: Answer">
+                            </li>
+                            <li id="step3" class="col-sm-4 col-md-4 step">
+                                <img src="{{ step3img }}" alt="Step 3: Share">
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="clearfix"></div>
+                    <!-- <div class="col-md-3">&nbsp;</div> -->
+                </div>
+                
+                <div class="clearfix"></div>
+            </div>            
+        </div>
+        
+    </div>
+</div>
