@@ -1,4 +1,4 @@
-code-samples
+Matt Williams Code Samples
 ============
 
 This is a repository for various samples of some of my most recent work over the last year+.  Most of this work has been completed utilizing client-side technologies like RequireJS, jQuery, AJAX with RactiveJS for front and back-end data binding, as well custom jQuery plugins and application code.
